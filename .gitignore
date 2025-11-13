@@ -1,0 +1,14 @@
+# Maxfiy fayllar
+.env
+config.py
+
+# Python cache va virtual environment
+__pycache__/
+*.pyc
+venv/
+.env/
+.idea/
+.vscode/
+
+# Mahalliy fayllar
+*.log
