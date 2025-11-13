@@ -1,0 +1,27 @@
+version: "3.9"
+
+
+
+services:
+  pg_service:
+    image: postgres:alpine
+    container_name: pg10
+    restart: always
+    environment:
+      POSTGRES_PASSWORD: KarvonTaxiLeaderForeverKF2025
+    ports:
+      - "5434:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+
+  bot:
+    build: .
+    image: taxiuz
+    container_name: taxiuz_con
+    restart: always
+    command: python3 main.py
+    depends_on:
+      - pg_service
+
+volumes:
+  pgdata:
